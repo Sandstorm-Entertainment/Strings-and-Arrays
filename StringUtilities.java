@@ -43,7 +43,29 @@ class StringUtilities
     
     if (descriptionOf == 1) { // Description of string utility 1
       System.out.println("Count the total number of letters (no spaces, punctuation) in the statement(s).");
-    }
+    } else if (descriptionOf == 2) { // Description of string utility 2 
+      System.out.println ("Count the total number of words in the statement(s).");
+    } else if (descriptionOf == 3) { // Description of string utility 3
+      System.out.println ("Change the first letter of each word to uppercase.");
+    } else if (descriptionOf == 4) { // Description of string utility 4
+      System.out.println ("Output the statement completely in reverse. The first character is now last, the last character is now first.");
+    } else if (descriptionOf == 5) { // Description of string utility 5
+      System.out.println ("Output the statement so the words are in the correct order, but the letters for each word are reversed.");
+    } else if (descriptionOf == 6) { // Description of string utility 6
+      System.out.println ("Output the statement so the words are in reverse order, but the letters from each word are still in the correct order.");
+    } else if (descriptionOf == 7) { // Description of string utility 7
+      System.out.println ("Output the statement so the first letter is uppercase, the 2nd is lowercase, the 3rd is uppercase, etc.");
+    } else if (descriptionOf == 8) { // Description of string utility 8
+      System.out.println ("Analyze the word to determine which letters are present, and output a summary of the count for each letter.");
+    } else if (descriptionOf == 9) { // Description of string utility 9
+      System.out.println ("Analyze the word to determine the number of consonants, vowels, spaces, and punctuation in the word.");
+    } else if (descriptionOf == 10) { // Description of string utility 10
+      System.out.println ("Display the statement(s) with no spaces or punctuation.");
+    } else if (descriptionOf == 11) { // Description of string utility 11
+      System.out.println ("Find a letter or substring in the statement(s), and output the full statements, indicating where the letters or substring may be found.");
+    } else if (descriptionOf == 12) { // Description of string utility 12
+      System.out.println ("Find a letter or substring and replace them with a new substring specified by the user.");
+    } 
     
     System.out.println("\nIf you want to continue with this string utility, enter \"Y\" otherwise hit the enter key"); //User decides if they want the current string utility or not 
     userContinue = In.getString();
