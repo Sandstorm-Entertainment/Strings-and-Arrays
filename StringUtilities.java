@@ -39,7 +39,7 @@ class StringUtilities
     // The user enters the string utility they wish to use and their input will be taken and checked in the validEntry method
     descriptionOf = validEntry();
     
-    System.out.println("Description: ");
+    System.out.println("\nDescription: ");
     
     if (descriptionOf == 1) { // Description of string utility 1
       System.out.println("Count the total number of letters (no spaces, punctuation) in the statement(s).");
