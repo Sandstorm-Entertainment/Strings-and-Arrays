@@ -184,33 +184,31 @@ class StringUtilities
   // Method for the reverse letters utility 
   public static void reverseLetters(String input) 
   {
+    System.out.println("\nReverseLetters"); //name of utility
     
-   System.out.println("\nReverseLetters:");
     
-    
-    String result = ("");
-    String[] words = input.split("\\s+");
-    String[] reverse = new String[input.length()];
-    for (int j = 0; j < words.length; j ++)
+    String result = (""); //sets the result to nothing
+    String[] words = input.split("\\s+"); //splits the input into words seperated by spaces
+    String[] reverse = new String[input.length()]; //setting the length of this array to the amount of words
+    for (int j = 0; j < words.length; j ++) //making each element of the array equal to nothing
     {
       reverse[j] = "";
     }
      
-    for (int count = 0; count < words.length; count ++)
+    for (int count = 0; count < words.length; count ++) //repeats for each word there is
     {
-      for (int c = words[count].length() -1; c >= 0; c--)
+      for (int c = words[count].length() -1; c >= 0; c--) //repeats for how long the word is
       {
         reverse[count] = reverse[count] + words[count].charAt(c);
       }
     }
-    for (int x = 0; x < words.length; x++)
+    for (int x = 0; x < words.length; x++) 
     {
-    result = result + reverse[x] + " ";
+    result = result + reverse[x] + " "; //making the result by putting in each word reversed plus a space
     }      
-    System.out.println(result);
-    
+    System.out.println(result); //prints result
   }
-  
+ 
   // Method for the reverse words utility 
   public static void reverseWords(String input) 
   {
