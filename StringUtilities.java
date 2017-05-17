@@ -66,7 +66,7 @@ class StringUtilities
         System.out.println ("Find a letter or substring and replace them with a new substring specified by the user.");
       } 
       
-      System.out.println("\nIf you want to continue with this string utility, enter \"Y\" otherwise hit the enter key"); //User decides if they want the current string utility or not 
+      System.out.println("\nIf you want to continue with this string utility, enter \"Y\" otherwise hit the enter key to view another string utility."); //User decides if they want the current string utility or not 
       userContinue = In.getString();
       userContinue = userContinue.toUpperCase();
      
@@ -232,8 +232,21 @@ class StringUtilities
   // Method for the letters only utility 
   public static void lettersOnly(String input) 
   {
+    String output = "";
     
-    // Eren's code goes here
+    System.out.println("\nLetters Only");
+    
+    // Loops through every chararcter in the input 
+    for (int i = 0; i < input.length(); i++) { 
+      char c = input.charAt(i);
+      
+      if (Character.isLetter(c)) {
+        output = output + c; // Adds the charracter to the output 
+      }
+    }
+    
+    // Ouput
+    System.out.println(output);
     
   }
   
