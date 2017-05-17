@@ -140,9 +140,21 @@ class StringUtilities
   // Method for the count letters utility 
   public static void countLetters(String input) 
   {
+  
+   System.out.println("\nCount Letters");
     
-    // Josh's code goes here
+    int letterCount = 0; // initializes letter count to 0
     
+    for(int count = 0; count < input.length(); count++) 
+    {
+      char c = input.charAt(count);
+      if (Character.isLetter(c)) // checks to see if character is valid 
+      {
+        letterCount = letterCount + 1; // adds 1 to letterCount if c is a valid character
+      }
+    }
+     System.out.println("The total number of letters within your statement(s) is: " + letterCount);
+   
   }
   
   // Method for the count words utility 
