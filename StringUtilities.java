@@ -140,8 +140,19 @@ class StringUtilities
   // Method for the count letters utility 
   public static void countLetters(String input) 
   {
+    System.out.println("\nCount Letters");
     
-    // Josh's code goes here
+    int letterCount = 0; // initializes letter count to 0
+    
+    for(int count = 0; count < input.length(); count++) 
+    {
+      char c = input.charAt(count);
+      if (Character.isLetter(c)) // checks to see if character is valid 
+      {
+        letterCount = letterCount + 1; // adds 1 to letterCount if c is a valid character
+      }
+    }
+     System.out.println("The total number of letters within your statement(s) is: " + letterCount);
     
   }
   
@@ -202,16 +213,9 @@ class StringUtilities
   // Method for the reverse words utility 
   public static void reverseWords(String input) 
   {
-   System.out.println("\nReverseWords");
     
-    String result = ("");
-    String[] words = input.split("\\s+");
+    // Aaron's code goes here
     
-    for (int count = words.length -1; count >= 0; count--)
-    {
-      result = result + words[count] + " ";
-    }
-    System.out.println(result);
   }
   
   // Method for the alternate case utility 
