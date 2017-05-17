@@ -202,9 +202,16 @@ class StringUtilities
   // Method for the reverse words utility 
   public static void reverseWords(String input) 
   {
+   System.out.println("\nReverseWords");
     
-    // Aaron's code goes here
+    String result = ("");
+    String[] words = input.split("\\s+");
     
+    for (int count = words.length -1; count >= 0; count--)
+    {
+      result = result + words[count] + " ";
+    }
+    System.out.println(result);
   }
   
   // Method for the alternate case utility 
