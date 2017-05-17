@@ -173,7 +173,29 @@ class StringUtilities
   public static void reverseLetters(String input) 
   {
     
-    // Aaron's code goes here
+   System.out.println("\nReverseLetters:");
+    
+    
+    String result = ("");
+    String[] words = input.split("\\s+");
+    String[] reverse = new String[input.length()];
+    for (int j = 0; j < words.length; j ++)
+    {
+      reverse[j] = "";
+    }
+     
+    for (int count = 0; count < words.length; count ++)
+    {
+      for (int c = words[count].length() -1; c >= 0; c--)
+      {
+        reverse[count] = reverse[count] + words[count].charAt(c);
+      }
+    }
+    for (int x = 0; x < words.length; x++)
+    {
+    result = result + reverse[x] + " ";
+    }      
+    System.out.println(result);
     
   }
   
