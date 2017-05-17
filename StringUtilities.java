@@ -141,7 +141,7 @@ class StringUtilities
   public static void countLetters(String input) 
   {
   
-   System.out.println("\nCount Letters");
+    System.out.println("\nCount Letters");
     
     int letterCount = 0; // initializes letter count to 0
     
