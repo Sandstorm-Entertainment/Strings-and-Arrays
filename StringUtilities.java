@@ -301,7 +301,44 @@ class StringUtilities
   public static void searchAndReplace(String input) 
   {
     
-    // Eren's code goes here
+    Scanner scan = new Scanner(System.in);
+    String search;
+    String replace;
+    String str = "";
+    int occurance = 0;
+    
+    System.out.println("\nSearch and Replace");
+    
+    System.out.print("\nFind: ");
+    search = scan.nextLine(); // User search input 
+    
+    for (char c : input.toCharArray()) { // Loop goes through the user's statement
+      str += c;
+      if (str.length() == search.length()) {
+        if (str.equals(search)) {
+          occurance ++; // Adds 1 to the occurance of the searched item
+        }
+        str = str.substring(1);
+      }
+    }
+    
+    if (occurance > 0) { // The item the user wishes to find and replace is present in the original input 
+      
+      System.out.print("\nReplace with: ");
+      replace = scan.nextLine(); // User find input 
+      
+      input = input.replaceAll(search, replace); // Replace feature
+      
+      // Output
+      System.out.println("\nReplaced results:");
+      System.out.println(input);
+      
+    } else { // The item the user wishes to find and replace is not present in the original input 
+      
+      System.out.println("\nThe string is not present");
+    }
+    
+    scan.close(); // Closes the scanner 
     
   }
   
