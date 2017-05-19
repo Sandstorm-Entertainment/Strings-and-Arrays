@@ -272,8 +272,17 @@ class StringUtilities
   // Method for the reverse statement utility 
   public static void reverseStatement(String input) 
   {
+    String reverseInput = "";
+      
+    System.out.println("\nReverse Statement"); 
+      
+    for (int i = (input.length() - 1); i >= 0; i --) {
+      
+      reverseInput = reverseInput + input.charAt(i); // Adds each character to the reverseInput variable in reverse
+    }
     
-    // Josh's code goes here
+    // Output 
+    System.out.println("\n" + reverseInput);
     
   }
   
