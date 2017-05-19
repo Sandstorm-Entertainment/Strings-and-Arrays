@@ -323,6 +323,8 @@ class StringUtilities
   // Method for the alternate case utility 
   public static void alternateCase(String input) 
   {
+   System.out.println("\nAlternateCase");
+   
     String sentence;
     char[] ch = new char[] {};
     ch = input.toCharArray(); //making a character array with the letters in input
