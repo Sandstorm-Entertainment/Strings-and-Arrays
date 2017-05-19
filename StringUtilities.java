@@ -17,10 +17,16 @@ class StringUtilities
     String input;
     String userContinue;
     int descriptionOf;
+    String wantsToContinue;
+    boolean userWantsContinue = false;
+    
     
     System.out.println("String Utility Program");
-    System.out.println("\nEnter a single sentence or statement(s) to begin:");
-    input = In.getString(); // User input 
+   
+    do {
+    
+    System.out.println("\nMain Menu\n\nEnter a single sentence or statement(s) to begin:");
+    input = validInputEntry(); // User input 
     
     System.out.println("\nList of String Utilities:\nEnter the number of a corresponding utility to view its description.\n");
     
@@ -66,10 +72,10 @@ class StringUtilities
         System.out.println ("Find a letter or substring and replace them with a new substring specified by the user.");
       } 
       
-      System.out.println("\nIf you want to continue with this string utility, enter \"Y\" otherwise hit the enter key to view another string utility."); //User decides if they want the current string utility or not 
+      System.out.println("\nIf you want to continue with this string utility, enter \"Y\" otherwise hit the enter key to view another string uility."); //User decides if they want the current string utility or not 
       userContinue = In.getString();
       userContinue = userContinue.toUpperCase();
-     
+      
       
     } while (!userContinue.equals("Y")); // Loops until the user confirms the string utility they want to use 
     
@@ -99,6 +105,94 @@ class StringUtilities
     } else if (descriptionOf == 12) { // User selects string utility 12
       searchAndReplace(input);
     }
+    
+    System.out.println("\nDo you wish to continue with another string utility? Input \"Y\" to continue, otherwise hit enter to terminate the program.");
+    wantsToContinue = In.getString(); // Input
+    
+    if (wantsToContinue.toUpperCase().equals("Y")) { // If the user wants to continue 
+      userWantsContinue = true;
+    } else { // User wants to terminate the program 
+      System.out.println("\nProgram terminated by user.");
+    }
+    
+    } while (userWantsContinue == true); // Loops until the user no longer wants to continue running the program 
+    
+  }
+  
+  // Method used to validate the user input entry 
+  public static String validInputEntry()
+  {
+    String input;
+    boolean moreThanOneWord = false;
+    boolean isValid = false;
+    
+    do {
+      input = In.getString(); // User enters an input 
+      input = input.trim(); // Removes additional spaces at the end and begining of the input 
+      
+      
+      // Checks if the entry is blank
+      if (input.length() == 0) {
+        System.out.println("Error: Entry may not be blank.");
+        
+      } else {
+        
+        // Loops to check for spaces
+        for (int i = 0; i < input.length(); i++) {
+          char c = input.charAt(i);
+          
+          // Finds a space which indicates that there is more than one word
+          if (c == ' ') {
+            moreThanOneWord = true;
+          }
+        }
+        
+        if (moreThanOneWord == true) {
+          // Input contains more than one word 
+          isValid = true;
+        } else { // The input is one word or less
+          System.out.println("Error: Input must contain more than one word in order to be compatible with all the string utilities.");
+        }
+        
+      }
+    } while (isValid == false);
+    
+    // Returns the input to the main method
+    return input;
+    
+  }
+  
+  // Method used to validate the user entry for the string utility number
+  public static int validEntry()
+  {
+    
+    Scanner scan = new Scanner(System.in);
+    int input = 0;
+    boolean isValid = false; 
+    
+    while (isValid == false) { // Loops until the user enters a proper input 
+      if (scan.hasNextInt()) { // Checks if the users input has an integer value 
+        input = scan.nextInt(); // Assigns the input value to the local variable input if the user entered a valid input
+        
+        if (input >= 1 && input <= 12) { // Checks if the user input is between 1 and 12
+          isValid = true;
+          
+        } else { // User inputted a number that is not between 1 and 12 
+          System.out.println("Error: Enter an input between 1 and 12."); // Error message if the user enters an invalid input 
+          scan.nextLine(); // Scans the next line for an integer value 
+        }
+        
+      } else { // User enters an invalid number input 
+        System.out.println("Error: Invalid integer input. Enter another input."); // Error message if the user enters an invalid input 
+        scan.nextLine(); // Scans the next line for an integer value 
+      }
+    }
+    
+    // Closes the scanner 
+    scan.close(); 
+    
+    // Returns the input value to the main method
+    return input;  
     
   }
   
