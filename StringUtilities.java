@@ -264,8 +264,21 @@ class StringUtilities
   // Method for the capitilize every word utility 
   public static void capitalizeEveryWord(String input) 
   {
+     
+   System.out.println("\nCapitalizes every word in statement(s).
     
-    // Josh's code goes here
+    input = input.trim();
+    String[] words = input.split("\\s+"); 
+   input = ""; 
+    for (int count = 0; count < words.length; count++)
+    {
+    char upperCase = Character.toUpperCase(words[count].charAt(0));
+   input+= " " + upperCase + words[count].substring(1);
+    }
+   input = input.trim();
+   System.out.println(input + "\n");
+    
+    
     
   }
   
