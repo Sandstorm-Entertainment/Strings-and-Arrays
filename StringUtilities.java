@@ -229,9 +229,21 @@ class StringUtilities
   // Method for the alternate case utility 
   public static void alternateCase(String input) 
   {
+    String sentence;
+    char[] ch = new char[] {};
+    ch = input.toCharArray(); //making a character array with the letters in input
     
-    // Aaron's code goes here
-    
+    for (int count = 0; count < ch.length; count = count +2)
+    {
+      if (ch[count] != ' ') //checking for spaces
+      {
+        ch[count] = Character.toUpperCase(ch[count]); //Capitalizing the letter
+      }
+      else
+      {}
+    }
+    sentence = new String(ch);
+    System.out.println(sentence);
   }
   
   // Method for the letter frequency utility 
