@@ -265,20 +265,20 @@ class StringUtilities
   public static void capitalizeEveryWord(String input) 
   {
      
-   System.out.println("\nCapitalizes every word in statement(s).
+   System.out.println("\nCapitalize Every Word");
     
     input = input.trim();
     String[] words = input.split("\\s+"); 
-   input = ""; 
+    input = "";
+   
     for (int count = 0; count < words.length; count++)
     {
-    char upperCase = Character.toUpperCase(words[count].charAt(0));
-   input+= " " + upperCase + words[count].substring(1);
+     char upperCase = Character.toUpperCase(words[count].charAt(0));
+     input += " " + upperCase + words[count].substring(1); // Capitilizes the first letter in each word
     }
-   input = input.trim();
-   System.out.println(input + "\n");
-    
-    
+   
+    input = input.trim();
+    System.out.println(input + "\n");
     
   }
   
