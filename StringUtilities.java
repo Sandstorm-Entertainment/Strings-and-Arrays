@@ -254,7 +254,9 @@ class StringUtilities
   // Method for the count words utility 
   public static void countWords(String input) 
   {
-        
+   
+    System.out.println("\nCount Words");
+   
     String trimmed = input.trim(); // Trims input of extra spaces
     int words = trimmed.isEmpty() ? 0 : trimmed.split("\\s+").length; // Splits trimmed input and records its length
     System.out.println(words); // Outputs number of words 
