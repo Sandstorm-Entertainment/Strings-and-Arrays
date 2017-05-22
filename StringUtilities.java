@@ -320,7 +320,7 @@ class StringUtilities
     
     for (int count = 0; count < ch.length; count = count +2)
     {
-      if (ch[count] != ' ') //checking for spaces
+      if (ch[count] != ' ' && !Character.isLetter(ch[count])) //checking for spaces and if the input is a symbol
       {
         ch[count] = Character.toUpperCase(ch[count]); //Capitalizing the letter
       }
