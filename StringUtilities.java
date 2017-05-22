@@ -369,9 +369,231 @@ class StringUtilities
   // Method for the letter frequency utility 
   public static void letterFrequency(String input) 
   {
+    System.out.println("\nLetterFrequency");
+    System.out.println("This sentence is compised of...");
     
-    // Aaron's code goes here
-    
+    input = input.replace(" ", ""); //removes spaces
+    input = input.toUpperCase(); //makes it all uppercase
+    int[] in = new int [27]; //includes all letters and uses one element for all symbols
+                                
+    for (int j = 0; j <= input.length() -1 ; j++)
+    {
+      if (input.charAt(j) == 'A') //checks all the letters of the string to see if there is an 'A'
+      {
+        in[0] = in[0] + 1; //if true (add one to the 'A' count
+      }
+      else if (input.charAt(j) == 'B')
+      {
+        in[1] = in[1] + 1;
+      }
+      else if (input.charAt(j) == 'C')
+      {
+        in[2] = in[21] + 1;
+      }
+      else if (input.charAt(j) == 'D')
+      {
+        in[3] = in[3] + 1;
+      }
+      else if (input.charAt(j) == 'E')
+      {
+        in[4] = in[4] + 1;
+      }
+      else if (input.charAt(j) == 'F')
+      {
+        in[5] = in[5] + 1;
+      }
+      else if (input.charAt(j) == 'G')
+      {
+        in[6] = in[6] + 1;
+      }
+      else if (input.charAt(j) == 'H')
+      {
+        in[7] = in[7] + 1;
+      }
+      else if (input.charAt(j) == 'I')
+      {
+        in[8] = in[8] + 1;
+      }
+      else if (input.charAt(j) == 'J')
+      {
+        in[9] = in[9] + 1;
+      }
+      else if (input.charAt(j) == 'K')
+      {
+        in[10] = in[10] + 1;
+      }
+      else if (input.charAt(j) == 'L')
+      {
+        in[11] = in[11] + 1;
+      }
+      else if (input.charAt(j) == 'M')
+      {
+        in[12] = in[12] + 1;
+      }
+      else if (input.charAt(j) == 'N')
+      {
+        in[13] = in[13] + 1;
+      }
+      else if (input.charAt(j) == 'O')
+      {
+        in[14] = in[14] + 1;
+      }
+      else if (input.charAt(j) == 'P')
+      {
+        in[15] = in[15] + 1;
+      }
+      else if (input.charAt(j) == 'Q')
+      {
+        in[16] = in[16] + 1;
+      }
+      else if (input.charAt(j) == 'R')
+      {
+        in[17] = in[17] + 1;
+      }
+      else if (input.charAt(j) == 'S')
+      {
+        in[18] = in[18] + 1;
+      }
+      else if (input.charAt(j) == 'T')
+      {
+        in[19] = in[19] + 1;
+      }
+      else if (input.charAt(j) == 'U')
+      {
+        in[20] = in[20] + 1;
+      }
+      else if (input.charAt(j) == 'V')
+      {
+        in[21] = in[21] + 1;
+      }
+      else if (input.charAt(j) == 'W')
+      {
+        in[22] = in[22] + 1;
+      }
+      else if (input.charAt(j) == 'X')
+      {
+        in[23] = in[23] + 1;
+      }
+      else if (input.charAt(j) == 'Y')
+      {
+        in[24] = in[24] + 1;
+      }
+      else if (input.charAt(j) == 'Z')
+      {
+        in[25] = in[25] + 1;
+      }
+      else
+      {
+        in[26] = in[26] + 1; //counting any symbols or numbers
+      }
+    }
+    if (in[0] != 0) //if there is an A in the sentence
+    {
+      System.out.printf("%-5s %s %n","A - " , in[0]); //print how many 'A's there are
+    }
+    if (in[1] != 0)
+    {
+      System.out.printf("%-5s %s %n","B - " , in[1]);
+    }
+    if (in[2] != 0)
+    {
+      System.out.printf("%-5s %s %n","C - " , in[2]);
+    }
+    if (in[3] != 0)
+    {
+      System.out.printf("%-5s %s %n","D - " , in[3]);
+    }
+    if (in[4] != 0)
+    {
+      System.out.printf("%-5s %s %n","E - " , in[4]);
+    }
+    if (in[5] != 0)
+    {
+      System.out.printf("%-5s %s %n","F - " , in[5]);
+    }
+    if (in[6] != 0)
+    {
+      System.out.printf("%-5s %s %n","G - " , in[6]);}
+    if (in[7] != 0)
+    {
+      System.out.printf("%-5s %s %n","H - " , in[7]);
+    }
+    if (in[8] != 0)
+    {
+      System.out.printf("%-5s %s %n","I - " , in[8]);
+    }
+    if (in[9] != 0)
+    {
+      System.out.printf("%-5s %s %n","J - " , in[9]);
+    }
+    if (in[10] != 0)
+    {
+      System.out.printf("%-5s %s %n","K - " , in[10]);
+    }
+    if (in[11] != 0)
+    {
+      System.out.printf("%-5s %s %n","L - " , in[11]);
+    }
+    if (in[12] != 0)
+    {
+      System.out.printf("%-5s %s %n","M - " , in[12]);
+    }
+    if (in[13] != 0)
+    {
+      System.out.printf("%-5s %s %n","N - " , in[13]);
+    }
+    if (in[14] != 0)
+    {
+      System.out.printf("%-5s %s %n","O - " , in[14]);
+    }
+    if (in[15] != 0)
+    {
+      System.out.printf("%-5s %s %n","P - " , in[15]);
+    }
+    if (in[16] != 0)
+    {
+      System.out.printf("%-5s %s %n","Q - " , in[16]);
+    }
+    if (in[17] != 0)
+    {
+      System.out.printf("%-5s %s %n","R - " , in[17]);
+    }
+    if (in[18] != 0)
+    {
+      System.out.printf("%-5s %s %n","S - " , in[18]);
+    }
+    if (in[19] != 0)
+    {
+      System.out.printf("%-5s %s %n","T - " , in[19]);
+    }
+    if (in[20] != 0)
+    {
+      System.out.printf("%-5s %s %n","U - " , in[20]);
+    }
+    if (in[21] != 0)
+    {
+      System.out.printf("%-5s %s %n","V - " , in[21]);
+    }
+    if (in[22] != 0)
+    {
+      System.out.printf("%-5s %s %n","W - " , in[22]);
+    }
+    if (in[23] != 0)
+    {
+      System.out.printf("%-5s %s %n","X - " , in[23]);
+    }
+    if (in[24] != 0)
+    {
+      System.out.printf("%-5s %s %n","Y - " , in[24]);
+    }
+    if (in[25] != 0)
+    {
+      System.out.printf("%-5s %s %n","Z - " , in[25]);
+    }
+    if (in[26] != 0)
+    {
+      System.out.printf("%-5s %s %n","Symbols - " , in[26]);
+    }
   }
   
   // Method for the consonants and vowels utility 
