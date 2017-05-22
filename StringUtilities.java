@@ -196,41 +196,6 @@ class StringUtilities
     
   }
   
-  
-  // Method used to validate the user entry for the string utility number
-  public static int validEntry()
-  {
-    
-    Scanner scan = new Scanner(System.in);
-    int input = 0;
-    boolean isValid = false; 
-    
-    while (isValid == false) { // Loops until the user enters a proper input 
-      if (scan.hasNextInt()) { // Checks if the users input has an integer value 
-        input = scan.nextInt(); // Assigns the input value to the local variable input if the user entered a valid input
-        
-        if (input >= 1 && input <= 12) { // Checks if the user input is between 1 and 12
-          isValid = true;
-          
-        } else { // User inputted a number that is not between 1 and 12 
-          System.out.println("Error: Enter an input between 1 and 12."); // Error message if the user enters an invalid input 
-          scan.nextLine(); // Scans the next line for an integer value 
-        }
-        
-      } else { // User enters an invalid number input 
-        System.out.println("Error: Invalid integer input. Enter another input."); // Error message if the user enters an invalid input 
-        scan.nextLine(); // Scans the next line for an integer value 
-      }
-    }
-    
-    // Closes the scanner 
-    scan.close(); 
-    
-    // Returns the input value to the main method
-    return input;  
-    
-  }
-  
   // Method for the count letters utility 
   public static void countLetters(String input) 
   {
