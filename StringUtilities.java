@@ -613,38 +613,45 @@ class StringUtilities
   // Method for the search utility 
   public static void search(String input) 
   {
-   
+    
     Scanner scan = new Scanner(System.in);
     String search;
     String str = "";
     int occurance = 0;
     String index = "";
+    boolean isPresent = false;
     
     System.out.println("\nSearch");
     
-    System.out.print("\nFind: ");
-    search = scan.nextLine(); // User input 
-  
-    for (char c : input.toCharArray()) { // Loop goes through the user's statement
-      str += c;
-      if (str.length() == search.length()) {
-        if (str.equals(search)) {
-          occurance ++; // Adds 1 to the occurance of the searched item
+    
+    do {
+      
+      System.out.print("\nFind: ");
+      search = scan.nextLine(); // User input 
+      
+      for (char c : input.toCharArray()) { // Loop goes through the user's statement
+        str += c;
+        if (str.length() == search.length()) {
+          if (str.equals(search)) {
+            occurance ++; // Adds 1 to the occurance of the searched item
+          }
+          str = str.substring(1);
         }
-        str = str.substring(1);
       }
-    }
-    
-    for (int i = -1; (i = input.indexOf(search, i + 1)) != -1; ) {
-    index = index + " " + (i + 1); // Adds the index to the index variable
-    }
-    
-    if (occurance > 0) {
-      System.out.println("\nThe string is present and the count of the given string is: " + occurance);
-      System.out.println("The substring " + search + " was found in the position(s):" + index);
-    } else {
-      System.out.println("\nThe string is not present");
-    }
+      
+      for (int i = -1; (i = input.indexOf(search, i + 1)) != -1; ) {
+        index = index + " " + (i + 1); // Adds the index to the index variable
+      }
+      
+      if (occurance > 0) {
+        System.out.println("\nThe string is present and the count of the given string is: " + occurance);
+        System.out.println("The substring " + search + " was found in the position(s):" + index);
+        isPresent = true;
+      } else {
+        System.out.println("\nThe string is not present");
+      }
+      
+    } while (isPresent == false);
     
     scan.close(); // Closes the scanner 
     
@@ -659,37 +666,44 @@ class StringUtilities
     String replace;
     String str = "";
     int occurance = 0;
+    boolean isPresent = false;
     
     System.out.println("\nSearch and Replace");
     
-    System.out.print("\nFind: ");
-    search = scan.nextLine(); // User search input 
-    
-    for (char c : input.toCharArray()) { // Loop goes through the user's statement
-      str += c;
-      if (str.length() == search.length()) {
-        if (str.equals(search)) {
-          occurance ++; // Adds 1 to the occurance of the searched item
+    do {
+      
+      System.out.print("\nFind: ");
+      search = scan.nextLine(); // User search input 
+      
+      for (char c : input.toCharArray()) { // Loop goes through the user's statement
+        str += c;
+        if (str.length() == search.length()) {
+          if (str.equals(search)) {
+            occurance ++; // Adds 1 to the occurance of the searched item
+          }
+          str = str.substring(1);
         }
-        str = str.substring(1);
       }
-    }
-    
-    if (occurance > 0) { // The item the user wishes to find and replace is present in the original input 
       
-      System.out.print("\nReplace with: ");
-      replace = scan.nextLine(); // User find input 
+      if (occurance > 0) { // The item the user wishes to find and replace is present in the original input 
+        
+        System.out.print("\nReplace with: ");
+        replace = scan.nextLine(); // User find input 
+        
+        input = input.replaceAll(search, replace); // Replace feature
+        
+        isPresent = true;
+        
+        // Output
+        System.out.println("\nReplaced results:");
+        System.out.println(input);
+        
+      } else { // The item the user wishes to find and replace is not present in the original input 
+        
+        System.out.println("\nThe string is not present");
+      }
       
-      input = input.replaceAll(search, replace); // Replace feature
-      
-      // Output
-      System.out.println("\nReplaced results:");
-      System.out.println(input);
-      
-    } else { // The item the user wishes to find and replace is not present in the original input 
-      
-      System.out.println("\nThe string is not present");
-    }
+    } while (isPresent == false);
     
     scan.close(); // Closes the scanner 
     
