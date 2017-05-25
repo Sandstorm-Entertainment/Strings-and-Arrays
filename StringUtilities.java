@@ -315,6 +315,7 @@ class StringUtilities
    System.out.println("\nAlternateCase");
    
     String sentence;
+    input = input.toLowerCase();
     char[] ch = new char[] {};
     ch = input.toCharArray(); //making a character array with the letters in input
     
