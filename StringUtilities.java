@@ -14,7 +14,7 @@ class StringUtilities
   public static void main(String[] args)
   {
     
-    String input;
+    String input = "";
     String userContinue;
     int descriptionOf;
     String wantsToContinue;
