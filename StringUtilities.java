@@ -25,8 +25,12 @@ class StringUtilities
    
     do {
     
-    System.out.println("\nMain Menu\n\nEnter a single sentence or statement(s) to begin:");
-    input = validInputEntry(); // User input 
+      System.out.println("\nMain Menu");
+      
+      if (runProgram >= 0 && newEntry == true) { // User's first entry or they want to enter a new entry 
+        System.out.println("\nEnter a single sentence or statement(s) to continue:");
+        input = validInputEntry(); // User input 
+      }
     
     System.out.println("\nList of String Utilities:\nEnter the number of a corresponding utility to view its description.\n");
     
@@ -110,10 +114,23 @@ class StringUtilities
     wantsToContinue = In.getString(); // Input
     
     if (wantsToContinue.toUpperCase().equals("Y")) { // If the user wants to continue 
-      userWantsContinue = true;
-    } else { // User wants to terminate the program 
-      System.out.println("\nProgram terminated by user.");
-    }
+        userWantsContinue = true;
+        runProgram ++; 
+        
+        System.out.println("\nIf you want to enter a new input, enter \"Y\", otherwise hit enter to use the same input.");
+        entry = In.getString();
+        
+        if (entry.toUpperCase().equals("Y")) { // User wants to enter a new input 
+          newEntry = true;
+        } else {
+          newEntry = false;
+        }
+        
+      } else { // User wants to terminate the program 
+        System.out.println("\nProgram terminated by user.");
+        userWantsContinue = false;
+        newEntry = false;
+      }
     
     } while (userWantsContinue == true); // Loops until the user no longer wants to continue running the program 
     
