@@ -19,6 +19,9 @@ class StringUtilities
     int descriptionOf;
     String wantsToContinue;
     boolean userWantsContinue = false;
+    int runProgram = 0;
+    String entry;
+    boolean newEntry = true;
     
     
     System.out.println("String Utility Program");
